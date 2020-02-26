@@ -18,7 +18,9 @@ exports.config = {
     frameworkPath:  require.resolve('@serenity-js/protractor/adapter'),
 
     specs: [ 'features/**/*.feature' ],
-
+// suites:{
+// regression:['']
+// },
     serenity: {
         runner: 'cucumber',
         crew: [
@@ -28,30 +30,19 @@ exports.config = {
             new SerenityBDDReporter(),
         ]
     },
-
-    /**
-     * If you're interacting with a non-Angular application,
-     * uncomment the below onPrepare section,
-     * which disables Angular-specific test synchronisation.
-     */
     onPrepare: function() {
         browser.manage().window().maximize();
-
     },
-
     cucumberOpts: {
         require: [ 'features/**/*.ts', 'screenplay/*.ts','support/*.ts'],
         'require-module':   [ 'ts-node/register'],
-        tags:    ['~@wip'],
         strict:  false,
     },
-
     capabilities: {
         browserName: 'chrome',
         loggingPrefs: {
             browser: 'SEVERE' // "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL".
         },
-
         chromeOptions: {
             args: [
                 '--no-sandbox',

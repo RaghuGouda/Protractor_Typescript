@@ -12,10 +12,10 @@ Given(/I am on Angular page with title (.*)/,  (title: string) => {
 });
 
 Given(/I click on docs/,  () => {
-    basic.document();
+    return basic.document();
 });
 
 Given(/I click on resources/,  () => {
-       basic.resources();
+      return basic.resources();
 
 });
