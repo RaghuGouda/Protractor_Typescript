@@ -2,8 +2,8 @@ Feature: Testing incident API'S
   Description: Testing incident API'S
 
   @e2e
-  Scenario Outline: Login Micro Service
-  Description: Login into NAD with Project Manager Credentials
+  Scenario Outline: Get incident
+  Description: To Get incident
 
     When I GET <url>
     Then response code should be <status_code>
